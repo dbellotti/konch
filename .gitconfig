@@ -1,0 +1,15 @@
+[user]
+  name = David Bellotti
+  email = dbellotti@gmail.com
+[core]
+  editor = nvim
+  pager = diff-so-fancy | less --tabs=4 -RFX
+[color]
+  diff = auto
+  status = auto
+[alias]
+  co = checkout
+  st = status
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit
+[diff-so-fancy]
+  markEmptyLines = false
