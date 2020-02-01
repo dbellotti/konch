@@ -6,6 +6,7 @@ RUN pacman -Syyu --noconfirm \
       base-devel \
       diff-so-fancy \
       docker \
+      docker-compose \
       fish \
       git \
       jq \
@@ -26,14 +27,13 @@ RUN sudo -u builduser bash -c \
       git clone https://aur.archlinux.org/yay.git && \
       cd yay && \
       makepkg -sri --noconfirm"
-
 RUN sudo -u builduser bash -c "yay -Syyu --noconfirm heroku-cli"
 
 RUN pip3 install --user neovim
+RUN curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
-      nvim +PlugInstall +qall
+RUN nvim --headless +PlugInstall +qall
 
 COPY .config /root/.config
 ADD .gitconfig /root/.gitconfig
