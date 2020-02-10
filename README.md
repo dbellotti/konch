@@ -1,4 +1,4 @@
-# smat-shell
+# konch (container shell)
 use docker to have your dev environment anywhere
 
 # prep
@@ -6,8 +6,8 @@ if your performance is bad, make sure you allocate more cpus and memory in your 
 
 get the code
 ```
-git clone git@github.com:dbellotti/smat-shell.git
-cd ./smat-shell
+git clone git@github.com:dbellotti/konch.git
+cd ./konch
 ```
 
 # use
